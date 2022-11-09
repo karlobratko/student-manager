@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="StudentManager.UI.Views.CourseParticipantCreateView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StudentManager.UI.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="180" d:DesignWidth="400">
+  <Grid Margin="20">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <TextBlock Grid.Row="0"
+               FontSize="28"
+               Text="Create Course Participant" />
+
+    <Grid Grid.Row="1">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="auto" />
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <StackPanel Margin="0,0,0,10">
+        <TextBlock Text="Student" FontSize="14" />
+        <ComboBox Width="360"
+                  HorizontalAlignment="Left"
+                  ItemsSource="{Binding Students}"
+                  SelectedItem="{Binding SelectedStudent}"/>
+      </StackPanel>
+
+      <StackPanel Orientation="Horizontal"
+                  Grid.Row="1"
+                  HorizontalAlignment="Right"
+                  FlowDirection="LeftToRight">
+        <Button Margin="10 0 0 0"
+                Height="25"
+                Width="100"
+                Content="Submit"
+                Command="{Binding SubmitCourseParticipantCommand}"/>
+
+        <Button Margin="10 0 0 0"
+                Height="25"
+                Width="100"
+                Command="{Binding NavigateBackCommand}"
+                Content="Back" />
+      </StackPanel>
+    </Grid>
+
+  </Grid>
+</UserControl>

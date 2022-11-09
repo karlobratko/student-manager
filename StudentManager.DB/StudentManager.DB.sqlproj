@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>StudentManager.DB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{68a971bf-98fc-4fe3-97cd-a68ad4e00b44}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>StudentManager.DB</RootNamespace>
+    <AssemblyName>StudentManager.DB</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Programmability" />
+    <Folder Include="dbo\Programmability\Store Procedures" />
+    <Folder Include="dbo\Programmability\Store Procedures\Assistants" />
+    <Folder Include="dbo\Programmability\Store Procedures\CourseParticipants" />
+    <Folder Include="dbo\Programmability\Store Procedures\Courses" />
+    <Folder Include="dbo\Programmability\Store Procedures\Lecturers" />
+    <Folder Include="dbo\Programmability\Store Procedures\Students" />
+    <Folder Include="dbo\Programmability\Store Procedures\Users" />
+    <Folder Include="dbo\Programmability\Store Procedures\Assistants\CRUD" />
+    <Folder Include="dbo\Programmability\Store Procedures\CourseParticipants\CRUD" />
+    <Folder Include="dbo\Programmability\Store Procedures\Courses\CRUD" />
+    <Folder Include="dbo\Programmability\Store Procedures\Lecturers\CRUD" />
+    <Folder Include="dbo\Programmability\Store Procedures\Users\CRUD" />
+    <Folder Include="dbo\Programmability\Store Procedures\Students\CRUD" />
+    <Folder Include="dbo\Programmability\Store Procedures\Lecturers\BL" />
+    <Folder Include="dbo\Programmability\Store Procedures\Assistants\BL" />
+    <Folder Include="dbo\Programmability\Store Procedures\Students\BL" />
+    <Folder Include="dbo\Programmability\Store Procedures\CourseParticipants\BL" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StudentManager.DB.publish.xml" />
+    <None Include="StudentManager.testDB.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Students.sql" />
+    <Build Include="dbo\Tables\Courses.sql" />
+    <Build Include="dbo\Tables\Lecturers.sql" />
+    <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="dbo\Tables\Assistants.sql" />
+    <Build Include="dbo\Tables\CourseParticipants.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Assistants\CRUD\Create.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Assistants\CRUD\Delete.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Assistants\CRUD\Update.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Assistants\CRUD\Read.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\CourseParticipants\CRUD\Create.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\CourseParticipants\CRUD\Delete.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\CourseParticipants\CRUD\Read.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\CourseParticipants\CRUD\Update.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Courses\CRUD\Create.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Courses\CRUD\Delete.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Courses\CRUD\Read.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Courses\CRUD\Update.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Users\CRUD\Create.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Users\CRUD\Delete.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Users\CRUD\Read.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Users\CRUD\Update.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Lecturers\CRUD\Create.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Lecturers\CRUD\Delete.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Lecturers\CRUD\Read.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Lecturers\CRUD\Update.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Students\CRUD\Create.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Students\CRUD\Delete.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Students\CRUD\Read.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Students\CRUD\Update.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Lecturers\BL\ReadByCourseFK.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Assistants\BL\DeleteByCourseFKAndLecturerFK.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\Students\BL\ReadByCourseFK.sql" />
+    <Build Include="dbo\Programmability\Store Procedures\CourseParticipants\BL\DeleteByCourseFKAndStudentFK.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment.sql" />
+  </ItemGroup>
+</Project>
